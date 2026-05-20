@@ -18,8 +18,8 @@ body {
         align-items: center;
         gap: 4px;
         padding: 8px 16px;
-        background: #1a1a1a;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
+        background: transparent;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
         flex-shrink: 0;
 }
 
@@ -39,6 +39,7 @@ body {
 }
 
 .nav-tab i { font-size: 16px; }
+.nav-icon { width: 17px; height: 17px; flex-shrink: 0; }
 
 .nav-tab:hover {
         background: rgba(255,255,255,0.08);
