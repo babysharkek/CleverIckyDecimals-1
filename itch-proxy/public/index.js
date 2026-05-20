@@ -194,12 +194,16 @@ const searchEngine = document.getElementById("sj-search-engine");
 const error = document.getElementById("sj-error");
 const errorCode = document.getElementById("sj-error-code");
 const homeScreen = document.getElementById("sj-home");
+const gamesScreen = document.getElementById("sj-games");
 const browserUI = document.getElementById("sj-browser");
 const frame = document.getElementById("sj-frame");
 const navBack = document.getElementById("nav-back");
 const navForward = document.getElementById("nav-forward");
 const navRefresh = document.getElementById("nav-refresh");
 const navHome = document.getElementById("nav-home");
+const topNav = document.getElementById("sj-nav");
+const tabHome = document.getElementById("tab-home");
+const tabGames = document.getElementById("tab-games");
 
 const { ScramjetController } = $scramjetLoadController();
 
@@ -230,15 +234,33 @@ async function ensureSW() {
         }
 }
 
+function setActiveTab(tab) {
+        [tabHome, tabGames].forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+}
+
 function showBrowser() {
         homeScreen.style.display = "none";
+        gamesScreen.style.display = "none";
         browserUI.style.display = "flex";
+        topNav.style.display = "none";
 }
 
 function showHome() {
         homeScreen.style.display = "flex";
+        gamesScreen.style.display = "none";
         browserUI.style.display = "none";
+        topNav.style.display = "flex";
         frame.src = "about:blank";
+        setActiveTab(tabHome);
+}
+
+function showGames() {
+        homeScreen.style.display = "none";
+        gamesScreen.style.display = "flex";
+        browserUI.style.display = "none";
+        topNav.style.display = "flex";
+        setActiveTab(tabGames);
 }
 
 function updateNavButtons() {
@@ -312,6 +334,17 @@ navRefresh.addEventListener("click", () => {
         try { frame.contentWindow.location.reload(); } catch { frame.src = frame.src; }
 });
 navHome.addEventListener("click", () => showHome());
+
+tabHome.addEventListener("click", () => showHome());
+tabGames.addEventListener("click", () => showGames());
+
+document.querySelectorAll(".game-card").forEach((card) => {
+        card.addEventListener("click", async (e) => {
+                e.preventDefault();
+                const url = card.getAttribute("data-url");
+                if (url) await navigate(url);
+        });
+});
 
 document.querySelectorAll(".ql-card").forEach((card) => {
         card.addEventListener("click", async (e) => {

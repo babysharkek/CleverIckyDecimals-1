@@ -20,6 +20,17 @@
         </head>
 
         <body>
+                <nav class="top-nav" id="sj-nav">
+                        <button class="nav-tab active" id="tab-home" title="Home">
+                                <i class="hgi hgi-stroke hgi-home-01"></i>
+                                <span>Home</span>
+                        </button>
+                        <button class="nav-tab" id="tab-games" title="Games">
+                                <i class="hgi hgi-stroke hgi-game-controller-02"></i>
+                                <span>Games</span>
+                        </button>
+                </nav>
+
                 <div class="home-screen" id="sj-home">
                         <div class="flex-center logo-wrapper header-center">
                                 <img src="shark-logo.png" alt="Shark Proxy" style="height: 140px; width: auto;" />
@@ -80,6 +91,79 @@
                         <div class="desc left-margin">
                                 <p id="sj-error"></p>
                                 <pre id="sj-error-code"></pre>
+                        </div>
+                </div>
+
+                <div class="games-screen" id="sj-games" style="display:none">
+                        <div class="games-header">
+                                <h2>Games</h2>
+                                <p>Click any game to play it through the proxy</p>
+                        </div>
+                        <div class="games-grid" id="sj-games-grid">
+                                <a class="game-card" data-url="https://slope.game" style="--g1:#1a1a2e;--g2:#16213e;--accent:#4facfe">
+                                        <div class="game-thumb">🎿</div>
+                                        <div class="game-info"><span class="game-name">Slope</span><span class="game-tag">Arcade</span></div>
+                                </a>
+                                <a class="game-card" data-url="https://1v1.lol" style="--g1:#0f2027;--g2:#203a43;--accent:#f7971e">
+                                        <div class="game-thumb">🔫</div>
+                                        <div class="game-info"><span class="game-name">1v1.lol</span><span class="game-tag">Shooter</span></div>
+                                </a>
+                                <a class="game-card" data-url="https://krunker.io" style="--g1:#1a0030;--g2:#2d0050;--accent:#c471ed">
+                                        <div class="game-thumb">🎯</div>
+                                        <div class="game-info"><span class="game-name">Krunker.io</span><span class="game-tag">FPS</span></div>
+                                </a>
+                                <a class="game-card" data-url="https://shellshock.io" style="--g1:#0d1b2a;--g2:#1b263b;--accent:#00b4d8">
+                                        <div class="game-thumb">🥚</div>
+                                        <div class="game-info"><span class="game-name">Shell Shockers</span><span class="game-tag">Shooter</span></div>
+                                </a>
+                                <a class="game-card" data-url="https://retrobowl.me" style="--g1:#1a2a00;--g2:#2d4a00;--accent:#76b900">
+                                        <div class="game-thumb">🏈</div>
+                                        <div class="game-info"><span class="game-name">Retro Bowl</span><span class="game-tag">Sports</span></div>
+                                </a>
+                                <a class="game-card" data-url="https://smashkarts.io" style="--g1:#2a0a0a;--g2:#4a1a1a;--accent:#ff4444">
+                                        <div class="game-thumb">🏎️</div>
+                                        <div class="game-info"><span class="game-name">Smash Karts</span><span class="game-tag">Racing</span></div>
+                                </a>
+                                <a class="game-card" data-url="https://bloxd.io" style="--g1:#0a1a2a;--g2:#1a3a5a;--accent:#00d4ff">
+                                        <div class="game-thumb">🟦</div>
+                                        <div class="game-info"><span class="game-name">Bloxd.io</span><span class="game-tag">Sandbox</span></div>
+                                </a>
+                                <a class="game-card" data-url="https://paper-io.com" style="--g1:#001a0a;--g2:#003a1a;--accent:#00ff88">
+                                        <div class="game-thumb">📄</div>
+                                        <div class="game-info"><span class="game-name">Paper.io</span><span class="game-tag">Strategy</span></div>
+                                </a>
+                                <a class="game-card" data-url="https://geometrydash.io" style="--g1:#1a1a00;--g2:#3a3a00;--accent:#ffcc00">
+                                        <div class="game-thumb">🟨</div>
+                                        <div class="game-info"><span class="game-name">Geometry Dash</span><span class="game-tag">Platformer</span></div>
+                                </a>
+                                <a class="game-card" data-url="https://classic.minecraft.net" style="--g1:#0a1a0a;--g2:#1a3a1a;--accent:#5d9e3f">
+                                        <div class="game-thumb">⛏️</div>
+                                        <div class="game-info"><span class="game-name">Minecraft Classic</span><span class="game-tag">Sandbox</span></div>
+                                </a>
+                                <a class="game-card" data-url="https://drifthunters.io" style="--g1:#1a0a00;--g2:#3a2000;--accent:#ff7700">
+                                        <div class="game-thumb">🚗</div>
+                                        <div class="game-info"><span class="game-name">Drift Hunters</span><span class="game-tag">Racing</span></div>
+                                </a>
+                                <a class="game-card" data-url="https://www.crazygames.com" style="--g1:#1a001a;--g2:#3a003a;--accent:#ff44ff">
+                                        <div class="game-thumb">🎮</div>
+                                        <div class="game-info"><span class="game-name">CrazyGames</span><span class="game-tag">All Games</span></div>
+                                </a>
+                                <a class="game-card" data-url="https://poki.com" style="--g1:#001a1a;--g2:#003a3a;--accent:#00ffcc">
+                                        <div class="game-thumb">🃏</div>
+                                        <div class="game-info"><span class="game-name">Poki</span><span class="game-tag">All Games</span></div>
+                                </a>
+                                <a class="game-card" data-url="https://www.coolmathgames.com" style="--g1:#001a2a;--g2:#003a5a;--accent:#0099ff">
+                                        <div class="game-thumb">🧮</div>
+                                        <div class="game-info"><span class="game-name">CoolMath Games</span><span class="game-tag">Puzzle</span></div>
+                                </a>
+                                <a class="game-card" data-url="https://itch.io" style="--g1:#2a000a;--g2:#5a001a;--accent:#ff2055">
+                                        <div class="game-thumb">🕹️</div>
+                                        <div class="game-info"><span class="game-name">Itch.io</span><span class="game-tag">Indie</span></div>
+                                </a>
+                                <a class="game-card" data-url="https://lichess.org" style="--g1:#1a1000;--g2:#3a2800;--accent:#f0a500">
+                                        <div class="game-thumb">♟️</div>
+                                        <div class="game-info"><span class="game-name">Lichess</span><span class="game-tag">Chess</span></div>
+                                </a>
                         </div>
                 </div>
 
