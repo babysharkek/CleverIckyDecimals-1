@@ -1,76 +1,76 @@
 <!doctype html>
 <html>
-        <head>
-                <meta charset="utf-8" />
-                <meta
-                        name="viewport"
-                        content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-                />
-                <title>Scramjet Proxy</title>
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+		/>
+		<title>Infamous Proxy</title>
 
-                <link rel="shortcut icon" content="favicon.webp" />
+		<link rel="shortcut icon" content="favicon.webp" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hugeicons@1.0.0/fonts/hugeicons.css" />
+		<link rel="stylesheet" href="index.css" />
+		<script src="/scram/scramjet.all.js"></script>
+		<script src="register-sw.js" defer></script>
+		<script src="search.js" defer></script>
+		<script src="index.js" defer></script>
+	</head>
 
-                <link rel="stylesheet" href="index.css" />
-                <script src="/scram/scramjet.all.js"></script>
-                <script src="register-sw.js" defer></script>
-                <script src="search.js" defer></script>
-                <script src="index.js" defer></script>
-        </head>
+	<body>
+		<div class="home-screen" id="sj-home">
+			<div class="flex-center logo-wrapper header-center">
+				<h1>Infamous Proxy</h1>
+			</div>
 
-        <body>
-                <div class="home-screen" id="sj-home">
-                        <div class="flex-center logo-wrapper header-center">
-                                <h1>Scramjet Proxy</h1>
-                        </div>
+			<form id="sj-form" class="flex-center">
+				<input
+					id="sj-search-engine"
+					value="https://duckduckgo.com/?q=%s"
+					type="hidden"
+				/>
+				<div class="search-wrap">
+					<i class="hgi hgi-stroke hgi-search-01"></i>
+					<input id="sj-address" type="text" placeholder="Search the web or enter a URL" autocomplete="off" spellcheck="false" />
+				</div>
+			</form>
 
-                        <form id="sj-form" class="flex-center">
-                                <input
-                                        id="sj-search-engine"
-                                        value="https://duckduckgo.com/?q=%s"
-                                        type="hidden"
-                                />
-                                <input id="sj-address" type="text" placeholder="Search the web or enter a URL" autocomplete="off" spellcheck="false" />
-                        </form>
-                        <div class="quicklinks" id="sj-quicklinks">
-                                <a class="ql-card" data-url="https://www.youtube.com">
-                                        <img src="https://www.youtube.com/favicon.ico" onerror="this.style.display='none'" />
-                                        <span>YouTube</span>
-                                </a>
-                                <a class="ql-card" data-url="https://gemini.google.com/">
-                                        <img src="https://www.gstatic.com/lamda/images/gemini_favicon_f069958c85030456e93de685481c559f160ea06.svg" onerror="this.style.display='none'" />
-                                        <span>Gemini</span>
-                                </a>
-                                <a class="ql-card" data-url="https://www.footballia.net">
-                                        <img src="https://www.footballia.net/favicon.ico" onerror="this.style.display='none'" />
-                                        <span>Footballia</span>
-                                </a>
-                                <a class="ql-card" data-url="https://justanime.to">
-                                        <img src="https://justanime.to/favicon.ico" onerror="this.style.display='none'" />
-                                        <span>JustAnime</span>
-                                </a>
-                        </div>
-                        <div class="desc left-margin">
-                                <p id="sj-error"></p>
-                                <pre id="sj-error-code"></pre>
-                        </div>
-                        <footer>
-                                <div>
-                                        <span>Based on Scramjet from Mercury Workshop</span>
-                                </div>
-                        </footer>
-                </div>
+			<div class="quicklinks" id="sj-quicklinks">
+				<a class="ql-card" data-url="https://www.youtube.com">
+					<img src="icon-youtube.png" alt="YouTube" />
+					<span>YouTube</span>
+				</a>
+				<a class="ql-card" data-url="https://gemini.google.com/">
+					<img src="icon-gemini.png" alt="Gemini" />
+					<span>Gemini</span>
+				</a>
+				<a class="ql-card" data-url="https://www.footballia.net">
+					<img src="icon-footballia.png" alt="Footballia" />
+					<span>Footballia</span>
+				</a>
+				<a class="ql-card" data-url="https://justanime.to">
+					<img src="icon-justanime.png" alt="JustAnime" />
+					<span>JustAnime</span>
+				</a>
+			</div>
 
-                <div class="browser-ui" id="sj-browser" style="display:none">
-                        <div class="nav-bar">
-                                <button id="nav-back" title="Back">&#8592;</button>
-                                <button id="nav-forward" title="Forward">&#8594;</button>
-                                <button id="nav-refresh" title="Refresh">&#8635;</button>
-                                <form id="nav-form" class="nav-url-form">
-                                        <input id="nav-url" type="text" autocomplete="off" spellcheck="false" placeholder="Search or enter URL" />
-                                </form>
-                                <button id="nav-home" title="Home">&#8962;</button>
-                        </div>
-                        <iframe id="sj-frame"></iframe>
-                </div>
-        </body>
+			<div class="desc left-margin">
+				<p id="sj-error"></p>
+				<pre id="sj-error-code"></pre>
+			</div>
+		</div>
+
+		<div class="browser-ui" id="sj-browser" style="display:none">
+			<div class="nav-bar">
+				<button id="nav-back" title="Back"><i class="hgi hgi-stroke hgi-arrow-left-01"></i></button>
+				<button id="nav-forward" title="Forward"><i class="hgi hgi-stroke hgi-arrow-right-01"></i></button>
+				<button id="nav-refresh" title="Refresh"><i class="hgi hgi-stroke hgi-reload"></i></button>
+				<form id="nav-form" class="nav-url-form">
+					<input id="nav-url" type="text" autocomplete="off" spellcheck="false" placeholder="Search or enter URL" />
+				</form>
+				<button id="nav-home" title="Home"><i class="hgi hgi-stroke hgi-home-01"></i></button>
+			</div>
+			<iframe id="sj-frame"></iframe>
+		</div>
+	</body>
 </html>

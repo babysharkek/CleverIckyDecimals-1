@@ -92,6 +92,12 @@ async function navigate(url) {
 frame.addEventListener("load", () => {
         updateNavUrl();
         updateNavButtons();
+        try {
+                frame.contentWindow.open = function (url) {
+                        if (url) navigate(String(url));
+                        return null;
+                };
+        } catch {}
 });
 
 if (form) {
