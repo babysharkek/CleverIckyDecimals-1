@@ -1,0 +1,489 @@
+YouTube (https://www.youtube.com)
+
+TikTok (https://www.tiktok.com)
+
+Google (https://www.google.com)
+
+Gemini (https://gemini.google.com)
+
+Footballia ([suspicious link removed])
+
+JustAnime (https://justanime.to)
+
+Cinekada (https://cinekada.com)
+
+Flixmomo (https://flixmomo.us)
+
+DuckDuckGo (https://duckduckgo.com)
+
+Reddit ([suspicious link removed])
+
+Instagram (https://www.instagram.com)
+
+Twitter / X (https://x.com)
+
+Netflix (https://www.netflix.com)
+
+Twitch (https://www.twitch.tv)
+
+Spotify (https://open.spotify.com)
+
+GitHub (https://github.com)
+
+Wikipedia (https://www.wikipedia.org)
+
+Google Classroom (https://classroom.google.com)
+
+Edpuzzle (https://edpuzzle.com)
+
+DeltaMath (https://www.deltamath.com)
+
+Quizlet (https://quizlet.com)
+
+Khan Academy (https://www.khanacademy.org)
+
+Kahoot (https://kahoot.it)
+
+ChatGPT (https://chatgpt.com)
+
+Claude AI (https://claude.ai)
+
+Microsoft Copilot (https://copilot.microsoft.com)
+
+Perplexity AI (https://www.perplexity.ai)
+
+Bing (https://www.bing.com)
+
+Yahoo (https://www.yahoo.com)
+
+Stack Overflow (https://stackoverflow.com)
+
+NPM (https://www.npmjs.com)
+
+MDN Web Docs (https://developer.mozilla.org)
+
+Vercel (https://vercel.com)
+
+Netlify (https://www.netlify.com)
+
+Replit (https://replit.com)
+
+CodePen (https://codepen.io)
+
+GitLab (https://gitlab.com)
+
+Bitbucket (https://bitbucket.org)
+
+AWS Console (https://aws.amazon.com)
+
+Google Cloud (https://cloud.google.com)
+
+Firebase (https://firebase.google.com)
+
+DigitalOcean (https://www.digitalocean.com)
+
+Docker Hub (https://hub.docker.com)
+
+Figma (https://www.figma.com)
+
+Canva (https://www.canva.com)
+
+Adobe (https://creativecloud.adobe.com)
+
+Facebook (https://www.facebook.com)
+
+LinkedIn (https://www.linkedin.com)
+
+Pinterest (https://www.pinterest.com)
+
+Discord ([suspicious link removed])
+
+WhatsApp Web (https://web.whatsapp.com)
+
+Telegram Web (https://web.telegram.org)
+
+Snapchat (https://www.snapchat.com)
+
+Tumblr (https://www.tumblr.com)
+
+Mastodon (https://mastodon.social)
+
+Threads (https://www.threads.net)
+
+Quora (https://www.quora.com)
+
+4chan (https://www.4chan.org)
+
+Steam Community (https://steamcommunity.com)
+
+Disney+ (https://www.disneyplus.com)
+
+Amazon Prime Video ([suspicious link removed])
+
+Hulu (https://www.hulu.com)
+
+Max HBO (https://www.max.com)
+
+Paramount+ (https://www.paramountplus.com)
+
+Peacock TV (https://www.peacocktv.com)
+
+Crunchyroll (https://www.crunchyroll.com)
+
+Funimation (https://www.funimation.com)
+
+MyAnimeList (https://myanimelist.net)
+
+AniWave (https://aniwave.to)
+
+SoundCloud (https://soundcloud.com)
+
+Apple Music (https://music.apple.com)
+
+YouTube Music (https://music.youtube.com)
+
+Bandcamp (https://bandcamp.com)
+
+Vimeo (https://vimeo.com)
+
+DailyMotion (https://www.dailymotion.com)
+
+IMDb (https://www.imdb.com)
+
+Rotten Tomatoes (https://www.rottentomatoes.com)
+
+Letterboxd (https://letterboxd.com)
+
+Roblox ([suspicious link removed])
+
+Minecraft (https://www.minecraft.net)
+
+Chess.com (https://www.chess.com)
+
+Lichess (https://lichess.org)
+
+CrazyGames (https://www.crazygames.com)
+
+Armor Games (https://armorgames.com)
+
+Kongregate (https://www.kongregate.com)
+
+Newgrounds (https://www.newgrounds.com)
+
+Poki (https://poki.com)
+
+CoolMath Games (https://www.coolmathgames.com)
+
+Wordle (https://www.nytimes.com/games/wordle)
+
+Trackmania (https://www.trackmania.com)
+
+IGN (https://www.ign.com)
+
+GameSpot (https://www.gamespot.com)
+
+PC Gamer (https://www.pcgamer.com)
+
+Nexus Mods (https://www.nexusmods.com)
+
+CurseForge (https://www.curseforge.com)
+
+Duolingo (https://www.duolingo.com)
+
+Coursera (https://www.coursera.org)
+
+edX (https://www.edx.org)
+
+Udemy (https://www.udemy.com)
+
+Codecademy (https://www.codecademy.com)
+
+FreeCodeCamp (https://www.freecodecamp.org)
+
+W3Schools (https://www.w3schools.com)
+
+Brilliant (https://brilliant.org)
+
+Blooket (https://www.blooket.com)
+
+Gimkit (https://www.gimkit.com)
+
+Schoology (https://www.schoology.com)
+
+Canvas LMS ([suspicious link removed])
+
+Blackboard (https://www.blackboard.com)
+
+WolframAlpha (https://www.wolframalpha.com)
+
+Britannica (https://www.britannica.com)
+
+National Geographic (https://www.nationalgeographic.com)
+
+TED Talks (https://www.ted.com)
+
+Space.com (https://www.space.com)
+
+Live Science (https://www.livescience.com)
+
+BBC News (https://www.bbc.com/news)
+
+CNN (https://www.cnn.com)
+
+The New York Times (https://www.nytimes.com)
+
+The Guardian (https://www.theguardian.com)
+
+Reuters (https://www.reuters.com)
+
+Associated Press (https://apnews.com)
+
+Bloomberg (https://www.bloomberg.com)
+
+Forbes (https://www.forbes.com)
+
+ESPN (https://www.espn.com)
+
+Bleacher Report (https://bleacherreport.com)
+
+Sky Sports (https://www.skysports.com)
+
+The Athletic (https://theathletic.com)
+
+FIFA (https://www.fifa.com)
+
+NBA (https://www.nba.com)
+
+NFL (https://www.nfl.com)
+
+UFC (https://www.ufc.com)
+
+Weather.com (https://weather.com)
+
+AccuWeather (https://www.accuweather.com)
+
+Amazon (https://www.amazon.com)
+
+eBay (https://www.ebay.com)
+
+Walmart (https://www.walmart.com)
+
+Target (https://www.target.com)
+
+Best Buy (https://www.bestbuy.com)
+
+Etsy (https://www.etsy.com)
+
+AliExpress (https://www.aliexpress.com)
+
+Temu (https://www.temu.com)
+
+Shein (https://www.shein.com)
+
+Shopify (https://www.shopify.com)
+
+Craigslist (https://www.craigslist.org)
+
+Facebook Marketplace (https://www.facebook.com/marketplace)
+
+IKEA (https://www.ikea.com)
+
+Home Depot (https://www.homedepot.com)
+
+Steam Store (https://store.steampowered.com)
+
+Epic Games Store (https://store.epicgames.com)
+
+Google Drive (https://drive.google.com)
+
+Google Docs (https://docs.google.com)
+
+Google Sheets (https://sheets.google.com)
+
+Google Maps (https://maps.google.com)
+
+Google Translate (https://translate.google.com)
+
+Gmail (https://mail.google.com)
+
+Outlook ([suspicious link removed])
+
+Microsoft 365 (https://www.office.com)
+
+OneDrive (https://onedrive.live.com)
+
+Dropbox (https://www.dropbox.com)
+
+Notion (https://www.notion.so)
+
+Trello (https://trello.com)
+
+Asana (https://asana.com)
+
+Slack (https://slack.com)
+
+Zoom (https://zoom.us)
+
+Google Meet (https://meet.google.com)
+
+Linktree (https://linktr.ee)
+
+Bitly (https://bitly.com)
+
+TinyURL ([suspicious link removed])
+
+Speedtest (https://www.speedtest.net)
+
+Imgur (https://imgur.com)
+
+Giphy (https://giphy.com)
+
+Wayback Machine (https://archive.org)
+
+PayPal (https://www.paypal.com)
+
+Venmo (https://venmo.com)
+
+Cash App (https://cash.app)
+
+Stripe (https://stripe.com)
+
+CoinMarketCap (https://coinmarketcap.com)
+
+Coinbase (https://www.coinbase.com)
+
+Binance (https://www.binance.com)
+
+TradingView (https://www.tradingview.com)
+
+Yahoo Finance (https://finance.yahoo.com)
+
+Robinhood (https://robinhood.com)
+
+Tripadvisor (https://www.tripadvisor.com)
+
+Airbnb (https://www.airbnb.com)
+
+Booking.com (https://www.booking.com)
+
+Expedia (https://www.expedia.com)
+
+Google Flights (https://www.google.com/travel/flights)
+
+Uber (https://www.uber.com)
+
+Lyft (https://www.lyft.com)
+
+Yelp (https://www.yelp.com)
+
+DoorDash (https://www.doordash.com)
+
+UberEats (https://www.ubereats.com)
+
+Grubhub (https://www.grubhub.com)
+
+Instacart (https://www.instacart.com)
+
+Allrecipes (https://www.allrecipes.com)
+
+Food Network (https://www.foodnetwork.com)
+
+Medium (https://medium.com)
+
+Substack (https://substack.com)
+
+TechCrunch (https://techcrunch.com)
+
+The Verge (https://www.theverge.com)
+
+Wired (https://www.wired.com)
+
+Engadget (https://www.engadget.com)
+
+Gizmodo (https://gizmodo.com)
+
+Lifehacker (https://lifehacker.com)
+
+Hacker News (https://news.ycombinator.com)
+
+Product Hunt (https://www.producthunt.com)
+
+Dev.to (https://dev.to)
+
+Know Your Meme (https://knowyourmeme.com)
+
+BuzzFeed (https://www.buzzfeed.com)
+
+Vice (https://www.vice.com)
+
+Vox (https://www.vox.com)
+
+Unsplash (https://unsplash.com)
+
+Pexels (https://www.pexels.com)
+
+Pixabay (https://pixabay.com)
+
+Freepik (https://www.freepik.com)
+
+Google Fonts (https://fonts.google.com)
+
+Dribbble (https://dribbble.com)
+
+Behance (https://www.behance.net)
+
+Font Awesome (https://fontawesome.com)
+
+DaFont (https://www.dafont.com)
+
+10MinuteMail (https://10minutemail.com)
+
+Guerrilla Mail (https://www.guerrillamail.com)
+
+Temp Mail (https://temp-mail.org)
+
+PDF2Go (https://www.pdf2go.com)
+
+ILovePDF (https://www.ilovepdf.com)
+
+Cloudflare (https://www.cloudflare.com)
+
+Namecheap (https://www.namecheap.com)
+
+GoDaddy (https://www.godaddy.com)
+
+Miniclip (https://www.miniclip.com)
+
+Addicting Games (https://www.addictinggames.com)
+
+Y8 Games (https://www.y8.com)
+
+Kizi (https://kizi.com)
+
+Agame (https://www.agame.com)
+
+Armor Games (https://armorgames.com)
+
+Itch.io (https://itch.io)
+
+Game Jolt (https://gamejolt.com)
+
+GOG (https://www.gog.com)
+
+Metacritic (https://www.metacritic.com)
+
+Speedrun.com (https://www.speedrun.com)
+
+Rock Paper Shotgun (https://www.rockpapershotgun.com)
+
+Polygon (https://www.polygon.com)
+
+Kotaku (https://kotaku.com)
+
+Eurogamer (https://www.eurogamer.net)
+
+GameRant (https://gamerant.com)
+
+Vandal (https://vandal.elespanol.com)
+
+3DJuegos (https://www.3djuegos.com)
