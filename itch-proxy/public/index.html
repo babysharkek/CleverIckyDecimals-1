@@ -1,46 +1,58 @@
 <!doctype html>
 <html>
-        <head>
-                <meta charset="utf-8" />
-                <meta
-                        name="viewport"
-                        content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-                />
-                <title>itch.io Proxy</title>
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+		/>
+		<title>Scramjet Proxy</title>
 
-                <link rel="shortcut icon" content="favicon.webp" />
+		<link rel="shortcut icon" content="favicon.webp" />
 
-                <link rel="stylesheet" href="index.css" />
-                <script src="/scram/scramjet.all.js"></script>
-                <!-- <script src="baremux/index.js" defer></script> -->
-                <!-- <script src="epoxy/index.js" defer></script> -->
-                <script src="register-sw.js" defer></script>
-                <script src="search.js" defer></script>
-                <script src="index.js" defer></script>
-        </head>
+		<link rel="stylesheet" href="index.css" />
+		<script src="/scram/scramjet.all.js"></script>
+		<script src="register-sw.js" defer></script>
+		<script src="search.js" defer></script>
+		<script src="index.js" defer></script>
+	</head>
 
-        <body>
-                <div title="Scramjet Logo" class="flex-center logo-wrapper header-center">
-                        <h1>itch.io Proxy</h1>
-                </div>
+	<body>
+		<div class="home-screen" id="sj-home">
+			<div class="flex-center logo-wrapper header-center">
+				<h1>Scramjet Proxy</h1>
+			</div>
 
-                <form id="sj-form" class="flex-center">
-                        <input
-                                id="sj-search-engine"
-                                value="https://duckduckgo.com/?q=%s"
-                                type="hidden"
-                        />
-                        <input id="sj-address" type="text" placeholder="Search the web" />
-                </form>
-                <div class="desc left-margin">
-                        <p id="sj-error"></p>
-                        <pre id="sj-error-code"></pre>
-                </div>
-                <footer>
-                        <div>
-                                <span>Based on Scramjet from Mercury Workshop</span>
-                        </div>
-                </footer>
-                <iframe style="display: none" id="sj-frame"></iframe>
-        </body>
+			<form id="sj-form" class="flex-center">
+				<input
+					id="sj-search-engine"
+					value="https://duckduckgo.com/?q=%s"
+					type="hidden"
+				/>
+				<input id="sj-address" type="text" placeholder="Search the web or enter a URL" autocomplete="off" spellcheck="false" />
+			</form>
+			<div class="desc left-margin">
+				<p id="sj-error"></p>
+				<pre id="sj-error-code"></pre>
+			</div>
+			<footer>
+				<div>
+					<span>Based on Scramjet from Mercury Workshop</span>
+				</div>
+			</footer>
+		</div>
+
+		<div class="browser-ui" id="sj-browser" style="display:none">
+			<div class="nav-bar">
+				<button id="nav-back" title="Back">&#8592;</button>
+				<button id="nav-forward" title="Forward">&#8594;</button>
+				<button id="nav-refresh" title="Refresh">&#8635;</button>
+				<form id="nav-form" class="nav-url-form">
+					<input id="nav-url" type="text" autocomplete="off" spellcheck="false" placeholder="Search or enter URL" />
+				</form>
+				<button id="nav-home" title="Home">&#8962;</button>
+			</div>
+			<iframe id="sj-frame"></iframe>
+		</div>
+	</body>
 </html>
