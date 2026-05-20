@@ -98,13 +98,24 @@ body {
         transform: translateY(-2px);
 }
 
-.ql-card img {
-        width: 32px;
-        height: 32px;
-        object-fit: contain;
+.ql-icon {
+        font-size: 28px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 }
 
-.ql-card span {
+.ql-icon-yt {
+        font-size: 36px;
+        color: #ff0000;
+}
+
+.ql-icon-fb {
+        font-size: 36px;
+}
+
+.ql-card span:last-child {
         color: #ddd;
         font-size: 12px;
         text-align: center;
@@ -123,6 +134,7 @@ body {
 
 .logo-wrapper h1 {
         color: white;
+        font-weight: 300;
 }
 
 footer {
@@ -198,29 +210,8 @@ footer span {
         background: none;
 }
 
-.nav-url-form {
+.nav-spacer {
         flex: 1;
-        display: flex;
-}
-
-#nav-url {
-        flex: 1;
-        background: rgba(255,255,255,0.07);
-        border: 1px solid rgba(255,255,255,0.15);
-        border-radius: 20px;
-        color: #fff;
-        font-family: inherit;
-        font-size: 13px;
-        padding: 0 14px;
-        height: 32px;
-        outline: none;
-        transition: border-color 0.15s, background 0.15s;
-        width: 100%;
-}
-
-#nav-url:focus {
-        border-color: rgba(255,255,255,0.4);
-        background: rgba(255,255,255,0.1);
 }
 
 #sj-frame {

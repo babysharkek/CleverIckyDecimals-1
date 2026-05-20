@@ -12,8 +12,6 @@ const navBack = document.getElementById("nav-back");
 const navForward = document.getElementById("nav-forward");
 const navRefresh = document.getElementById("nav-refresh");
 const navHome = document.getElementById("nav-home");
-const navUrl = document.getElementById("nav-url");
-const navForm = document.getElementById("nav-form");
 
 const { ScramjetController } = $scramjetLoadController();
 
@@ -66,13 +64,6 @@ function getFrameUrl() {
         }
 }
 
-function updateNavUrl() {
-        const url = getFrameUrl();
-        if (url && url !== "about:blank") {
-                navUrl.value = url;
-        }
-}
-
 function updateNavButtons() {
         try {
                 navBack.disabled = !frame.contentWindow.history.length || frame.contentWindow.history.length <= 1;
@@ -86,11 +77,9 @@ async function navigate(url) {
         showBrowser();
         const encoded = scramjet.encodeUrl(url);
         frame.src = encoded;
-        navUrl.value = url;
 }
 
 frame.addEventListener("load", () => {
-        updateNavUrl();
         updateNavButtons();
         try {
                 frame.contentWindow.open = function (url) {
@@ -108,12 +97,6 @@ if (form) {
                 address.value = "";
         });
 }
-
-navForm.addEventListener("submit", async (event) => {
-        event.preventDefault();
-        const url = search(navUrl.value, searchEngine.value);
-        await navigate(url);
-});
 
 navBack.addEventListener("click", () => {
         try {
