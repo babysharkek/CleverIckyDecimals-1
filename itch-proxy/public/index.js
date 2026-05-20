@@ -1,5 +1,22 @@
 "use strict";
 
+const disguises = [
+        { title: "Home - Classroom", icon: "favicon-classroom.png" },
+        { title: "Edpuzzle", icon: "favicon-edpuzzle.png" },
+        { title: "DeltaMath", icon: "favicon-deltamath.png" },
+        { title: "Quizlet", icon: "favicon-quizlet.png" },
+];
+
+function applyRandomDisguise() {
+        const pick = disguises[Math.floor(Math.random() * disguises.length)];
+        document.title = pick.title;
+        const favicon = document.getElementById("dynamic-favicon");
+        if (favicon) favicon.href = pick.icon + "?v=" + Date.now();
+}
+
+applyRandomDisguise();
+setInterval(applyRandomDisguise, 8000 + Math.random() * 7000);
+
 const form = document.getElementById("sj-form");
 const address = document.getElementById("sj-address");
 const searchEngine = document.getElementById("sj-search-engine");
