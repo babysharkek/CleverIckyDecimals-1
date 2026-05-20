@@ -37,91 +37,76 @@ body {
         margin: 0 0 28px;
 }
 
-/* ── Search bar ── */
+/* ── Search bar (Algolia Autocomplete) ── */
 .search-form-wrap { flex-direction: column; align-items: center; }
 
-.search-wrap {
-        position: relative;
-        display: flex;
-        align-items: center;
+#autocomplete {
         width: 440px;
 }
 
-.search-icon {
-        position: absolute;
-        left: 16px;
-        color: rgba(255,255,255,0.35);
-        font-size: 15px;
-        pointer-events: none;
+/* Dark theme overrides for Algolia classic theme */
+:root {
+        --aa-primary-color-rgb: 255,255,255;
+        --aa-input-border-color-rgb: 255,255,255;
+        --aa-background-color-rgb: 22,22,22;
+        --aa-background-color-alpha: 1;
+        --aa-input-background-color-rgb: 30,30,30;
+        --aa-input-background-color-alpha: 1;
+        --aa-panel-background-color-rgb: 22,22,22;
+        --aa-panel-background-color-alpha: 1;
+        --aa-text-color-rgb: 220,220,220;
+        --aa-icon-color-rgb: 180,180,180;
+        --aa-muted-color-rgb: 120,120,120;
+        --aa-selected-color-rgb: 255,255,255;
+        --aa-selected-color-alpha: 0.08;
+        --aa-detached-overlay-background-color-rgb: 0,0,0;
+        --aa-panel-border-color-rgb: 255,255,255;
+        --aa-panel-border-color-alpha: 0.1;
+        --aa-panel-shadow: 0 8px 32px rgba(0,0,0,0.7);
+        --aa-search-input-height: 46px;
+        --aa-input-border-color-alpha: 0.12;
+        --aa-font-family: "Inter", sans-serif;
+        --aa-font-size: 14px;
+        --aa-spacing: 10px;
 }
 
-#sj-address {
-        width: 100%;
-        background: rgba(255,255,255,0.06);
-        border: 1px solid rgba(255,255,255,0.12);
-        border-radius: 14px;
-        font-family: "Inter", sans-serif;
-        font-size: 14px;
-        font-weight: 400;
-        color: #fff;
-        padding: 0 18px 0 44px;
-        height: 46px;
-        outline: none;
-        transition: background 0.2s, border-color 0.2s;
+.aa-Form {
+        border-radius: 14px !important;
+        background: rgba(255,255,255,0.06) !important;
+        border-color: rgba(255,255,255,0.12) !important;
 }
 
-#sj-address::placeholder { color: rgba(255,255,255,0.3); }
-
-#sj-address:focus {
-        background: rgba(255,255,255,0.1);
-        border-color: rgba(255,255,255,0.3);
+.aa-Form:focus-within {
+        box-shadow: none !important;
+        border-color: rgba(255,255,255,0.3) !important;
+        background: rgba(255,255,255,0.1) !important;
 }
 
-/* ── Suggestions dropdown ── */
-.suggestions-box {
-        position: absolute;
-        top: calc(100% + 6px);
-        left: 0;
-        width: 100%;
-        background: #1e1e1e;
-        border: 1px solid rgba(255,255,255,0.12);
-        border-radius: 12px;
+.aa-Input { color: #fff !important; font-size: 14px !important; }
+.aa-Input::placeholder { color: rgba(255,255,255,0.3) !important; }
+
+.aa-Panel {
+        border-radius: 14px !important;
+        margin-top: 6px !important;
         overflow: hidden;
-        z-index: 100;
-        box-shadow: 0 8px 24px rgba(0,0,0,0.5);
 }
 
-.sug-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 9px 16px;
-        cursor: pointer;
-        transition: background 0.12s;
+.aa-ItemIcon { display: none !important; }
+
+.aa-ItemContentTitle {
+        font-size: 13px !important;
+        color: #e0e0e0 !important;
 }
 
-.sug-item:hover, .sug-item.active { background: rgba(255,255,255,0.08); }
-
-.sug-item .hgi {
-        color: rgba(255,255,255,0.3);
-        font-size: 13px;
-        flex-shrink: 0;
+.aa-ItemContentDescription {
+        font-size: 11px !important;
+        color: rgba(255,255,255,0.35) !important;
 }
 
-.sug-label {
-        color: #e0e0e0;
-        font-size: 13px;
-        flex-shrink: 0;
-}
+.aa-SubmitIcon path { fill: rgba(255,255,255,0.35) !important; }
+.aa-ClearIcon path { fill: rgba(255,255,255,0.35) !important; }
 
-.sug-url {
-        color: rgba(255,255,255,0.3);
-        font-size: 11px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        margin-left: auto;
-}
+.aa-Item[aria-selected="true"] { background: rgba(255,255,255,0.08) !important; }
 
 /* ── Disguise bar ── */
 .disguise-bar {

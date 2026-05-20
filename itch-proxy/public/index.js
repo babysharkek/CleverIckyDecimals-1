@@ -179,53 +179,17 @@ const suggestionsData = [
         { label: "Behance", url: "https://www.behance.net" },
 ];
 
-const haystack = suggestionsData.map(d => d.label + " " + d.url);
-const haystackLabels = suggestionsData.map(d => d.label);
-let uf;
-try { uf = new uFuzzy({ intraMode: 1, intraIns: 1 }); } catch {}
-
 const TOP_SITES = ["YouTube","TikTok","Instagram","Reddit","Netflix","Discord","Spotify","ChatGPT","Google","Twitch"];
-const sugBox = document.getElementById("sj-suggestions");
-let activeIdx = -1;
 
-function renderSuggestions(items) {
-        if (!items.length) { sugBox.style.display = "none"; return; }
-        sugBox.innerHTML = items.slice(0, 8).map((item, i) =>
-                `<div class="sug-item" data-idx="${i}" data-url="${item.url}">
-                        <i class="hgi hgi-stroke hgi-search-01"></i>
-                        <span class="sug-label">${item.label}</span>
-                        <span class="sug-url">${item.url.replace(/^https?:\/\//, "")}</span>
-                </div>`
-        ).join("");
-        sugBox.style.display = "block";
-        activeIdx = -1;
-        sugBox.querySelectorAll(".sug-item").forEach(el => {
-                el.addEventListener("mousedown", (e) => {
-                        e.preventDefault();
-                        navigateToSuggestion(el.getAttribute("data-url"));
-                });
-        });
-}
-
-function showTopSites() {
-        const items = TOP_SITES.map(name => suggestionsData.find(d => d.label === name)).filter(Boolean);
-        renderSuggestions(items);
-}
-
-function hideSuggestions() {
-        sugBox.style.display = "none";
-        activeIdx = -1;
-}
-
-async function navigateToSuggestion(url) {
-        hideSuggestions();
-        address.value = "";
-        await navigate(url);
+function filterSites(query) {
+        const q = query.trim().toLowerCase();
+        if (!q) return TOP_SITES.map(n => suggestionsData.find(d => d.label === n)).filter(Boolean);
+        return suggestionsData.filter(d =>
+                d.label.toLowerCase().includes(q) || d.url.toLowerCase().includes(q)
+        ).slice(0, 8);
 }
 
 /* ── Core elements ── */
-const form = document.getElementById("sj-form");
-const address = document.getElementById("sj-address");
 const searchEngine = document.getElementById("sj-search-engine");
 const error = document.getElementById("sj-error");
 const errorCode = document.getElementById("sj-error-code");
@@ -292,51 +256,44 @@ async function navigate(url) {
         frame.src = encoded;
 }
 
-/* ── Input suggestions ── */
-address.addEventListener("focus", () => {
-        if (!address.value.trim()) showTopSites();
+/* ── Algolia Autocomplete ── */
+const { autocomplete } = window['@algolia/autocomplete-js'];
+
+autocomplete({
+        container: '#autocomplete',
+        placeholder: 'Search or enter a URL…',
+        openOnFocus: true,
+        detachedMediaQuery: 'none',
+        getSources({ query }) {
+                return [{
+                        sourceId: 'sites',
+                        getItems() { return filterSites(query); },
+                        templates: {
+                                item({ item, html }) {
+                                        return html`
+                                                <div class="aa-ItemContent">
+                                                        <div class="aa-ItemContentBody">
+                                                                <div class="aa-ItemContentTitle">${item.label}</div>
+                                                                <div class="aa-ItemContentDescription">${item.url.replace(/^https?:\/\//, '')}</div>
+                                                        </div>
+                                                </div>`;
+                                },
+                        },
+                        onSelect({ item, setQuery, refresh }) {
+                                navigate(item.url);
+                                setQuery('');
+                                refresh();
+                        },
+                }];
+        },
+        onSubmit({ state, setQuery, refresh }) {
+                if (!state.query.trim()) return;
+                const url = search(state.query, searchEngine.value);
+                navigate(url);
+                setQuery('');
+                refresh();
+        },
 });
-
-address.addEventListener("input", () => {
-        const q = address.value.trim();
-        if (!q) { showTopSites(); return; }
-        if (!uf) return;
-        const idxs = uf.filter(haystack, q);
-        if (!idxs || !idxs.length) { hideSuggestions(); return; }
-        renderSuggestions(idxs.slice(0, 8).map(i => suggestionsData[i]));
-});
-
-address.addEventListener("keydown", (e) => {
-        const items = sugBox.querySelectorAll(".sug-item");
-        if (!items.length) return;
-        if (e.key === "ArrowDown") {
-                e.preventDefault();
-                activeIdx = Math.min(activeIdx + 1, items.length - 1);
-                items.forEach((el, i) => el.classList.toggle("active", i === activeIdx));
-        } else if (e.key === "ArrowUp") {
-                e.preventDefault();
-                activeIdx = Math.max(activeIdx - 1, -1);
-                items.forEach((el, i) => el.classList.toggle("active", i === activeIdx));
-        } else if (e.key === "Escape") {
-                hideSuggestions();
-        } else if (e.key === "Enter" && activeIdx >= 0) {
-                e.preventDefault();
-                navigateToSuggestion(items[activeIdx].getAttribute("data-url"));
-        }
-});
-
-address.addEventListener("blur", () => setTimeout(hideSuggestions, 150));
-
-/* ── Form submit ── */
-if (form) {
-        form.addEventListener("submit", async (event) => {
-                event.preventDefault();
-                hideSuggestions();
-                const url = search(address.value, searchEngine.value);
-                await navigate(url);
-                address.value = "";
-        });
-}
 
 /* ── Nav buttons ── */
 frame.addEventListener("load", () => {

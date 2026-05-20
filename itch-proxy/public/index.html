@@ -1,100 +1,97 @@
 <!doctype html>
 <html>
-        <head>
-                <meta charset="utf-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-                <title>Infamous Proxy</title>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+		<title>Infamous Proxy</title>
 
-                <link rel="icon" id="dynamic-favicon" href="favicon.ico" />
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Roboto:wght@300;400&display=swap" />
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hugeicons@1.0.0/fonts/hugeicons.css" />
-                <link rel="stylesheet" href="index.css" />
-                <script src="https://cdn.jsdelivr.net/npm/@leeoniya/ufuzzy@1.0.14/dist/uFuzzy.iife.min.js"></script>
-                <script src="/scram/scramjet.all.js"></script>
-                <script src="register-sw.js" defer></script>
-                <script src="search.js" defer></script>
-                <script src="index.js" defer></script>
-        </head>
+		<link rel="icon" id="dynamic-favicon" href="favicon.ico" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Roboto:wght@300;400&display=swap" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hugeicons@1.0.0/fonts/hugeicons.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic@1.17.9/dist/theme.min.css" />
+		<link rel="stylesheet" href="index.css" />
+		<script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js@1.17.9/dist/umd/index.production.js"></script>
+		<script src="/scram/scramjet.all.js"></script>
+		<script src="register-sw.js" defer></script>
+		<script src="search.js" defer></script>
+		<script src="index.js" defer></script>
+	</head>
 
-        <body>
-                <div class="home-screen" id="sj-home">
-                        <div class="flex-center logo-wrapper header-center">
-                                <h1>Infamous Proxy</h1>
-                        </div>
+	<body>
+		<div class="home-screen" id="sj-home">
+			<div class="flex-center logo-wrapper header-center">
+				<h1>Infamous Proxy</h1>
+			</div>
 
-                        <form id="sj-form" class="flex-center search-form-wrap">
-                                <input id="sj-search-engine" value="https://duckduckgo.com/?q=%s" type="hidden" />
-                                <div class="search-wrap">
-                                        <i class="hgi hgi-stroke hgi-search-01 search-icon"></i>
-                                        <input id="sj-address" type="text" placeholder="Search or enter a URL…" autocomplete="off" spellcheck="false" />
-                                        <div id="sj-suggestions" class="suggestions-box" style="display:none"></div>
-                                </div>
-                        </form>
+			<div class="flex-center search-form-wrap">
+				<input id="sj-search-engine" value="https://duckduckgo.com/?q=%s" type="hidden" />
+				<div id="autocomplete"></div>
+			</div>
 
-                        <div class="disguise-bar flex-center">
-                                <span class="disguise-label">Tab disguise:</span>
-                                <button class="dsg-btn active" data-title="Home - Classroom" data-icon="favicon-classroom.png">
-                                        <img src="favicon-classroom.png" alt="Classroom" />
-                                </button>
-                                <button class="dsg-btn" data-title="Edpuzzle" data-icon="favicon-edpuzzle.png">
-                                        <img src="favicon-edpuzzle.png" alt="Edpuzzle" />
-                                </button>
-                                <button class="dsg-btn" data-title="DeltaMath" data-icon="favicon-deltamath.png">
-                                        <img src="favicon-deltamath.png" alt="DeltaMath" />
-                                </button>
-                                <button class="dsg-btn" data-title="Quizlet" data-icon="favicon-quizlet.png">
-                                        <img src="favicon-quizlet.png" alt="Quizlet" />
-                                </button>
-                        </div>
+			<div class="disguise-bar flex-center">
+				<span class="disguise-label">Tab disguise:</span>
+				<button class="dsg-btn active" data-title="Home - Classroom" data-icon="favicon-classroom.png">
+					<img src="favicon-classroom.png" alt="Classroom" />
+				</button>
+				<button class="dsg-btn" data-title="Edpuzzle" data-icon="favicon-edpuzzle.png">
+					<img src="favicon-edpuzzle.png" alt="Edpuzzle" />
+				</button>
+				<button class="dsg-btn" data-title="DeltaMath" data-icon="favicon-deltamath.png">
+					<img src="favicon-deltamath.png" alt="DeltaMath" />
+				</button>
+				<button class="dsg-btn" data-title="Quizlet" data-icon="favicon-quizlet.png">
+					<img src="favicon-quizlet.png" alt="Quizlet" />
+				</button>
+			</div>
 
-                        <div class="quicklinks" id="sj-quicklinks">
-                                <a class="ql-card" data-url="https://www.youtube.com">
-                                        <img class="ql-icon" src="icon-youtube.png" alt="YouTube" />
-                                        <span>YouTube</span>
-                                </a>
-                                <a class="ql-card" data-url="https://www.tiktok.com">
-                                        <img class="ql-icon" src="icon-tiktok.png" alt="TikTok" />
-                                        <span>TikTok</span>
-                                </a>
-                                <a class="ql-card" data-url="https://gemini.google.com/">
-                                        <img class="ql-icon" src="icon-gemini.png" alt="Gemini" />
-                                        <span>Gemini</span>
-                                </a>
-                                <a class="ql-card" data-url="https://www.footballia.net">
-                                        <img class="ql-icon" src="icon-footballia.png" alt="Footballia" />
-                                        <span>Footballia</span>
-                                </a>
-                                <a class="ql-card" data-url="https://justanime.to">
-                                        <img class="ql-icon" src="icon-justanime.png" alt="JustAnime" />
-                                        <span>JustAnime</span>
-                                </a>
-                                <a class="ql-card" data-url="https://cinekada.com">
-                                        <img class="ql-icon" src="icon-cinekada.png" alt="Cinekada" />
-                                        <span>Cinekada</span>
-                                </a>
-                                <a class="ql-card" data-url="https://flixmomo.us">
-                                        <img class="ql-icon" src="icon-flixmomo.png" alt="Flixmomo" />
-                                        <span>Flixmomo</span>
-                                </a>
-                        </div>
+			<div class="quicklinks" id="sj-quicklinks">
+				<a class="ql-card" data-url="https://www.youtube.com">
+					<img class="ql-icon" src="icon-youtube.png" alt="YouTube" />
+					<span>YouTube</span>
+				</a>
+				<a class="ql-card" data-url="https://www.tiktok.com">
+					<img class="ql-icon" src="icon-tiktok.png" alt="TikTok" />
+					<span>TikTok</span>
+				</a>
+				<a class="ql-card" data-url="https://gemini.google.com/">
+					<img class="ql-icon" src="icon-gemini.png" alt="Gemini" />
+					<span>Gemini</span>
+				</a>
+				<a class="ql-card" data-url="https://www.footballia.net">
+					<img class="ql-icon" src="icon-footballia.png" alt="Footballia" />
+					<span>Footballia</span>
+				</a>
+				<a class="ql-card" data-url="https://justanime.to">
+					<img class="ql-icon" src="icon-justanime.png" alt="JustAnime" />
+					<span>JustAnime</span>
+				</a>
+				<a class="ql-card" data-url="https://cinekada.com">
+					<img class="ql-icon" src="icon-cinekada.png" alt="Cinekada" />
+					<span>Cinekada</span>
+				</a>
+				<a class="ql-card" data-url="https://flixmomo.us">
+					<img class="ql-icon" src="icon-flixmomo.png" alt="Flixmomo" />
+					<span>Flixmomo</span>
+				</a>
+			</div>
 
-                        <div class="desc left-margin">
-                                <p id="sj-error"></p>
-                                <pre id="sj-error-code"></pre>
-                        </div>
-                </div>
+			<div class="desc left-margin">
+				<p id="sj-error"></p>
+				<pre id="sj-error-code"></pre>
+			</div>
+		</div>
 
-                <div class="browser-ui" id="sj-browser" style="display:none">
-                        <div class="nav-bar">
-                                <button id="nav-back" title="Back"><i class="hgi hgi-stroke hgi-arrow-left-01"></i></button>
-                                <button id="nav-forward" title="Forward"><i class="hgi hgi-stroke hgi-arrow-right-01"></i></button>
-                                <button id="nav-refresh" title="Refresh"><i class="hgi hgi-stroke hgi-reload"></i></button>
-                                <div class="nav-spacer"></div>
-                                <button id="nav-home" title="Home"><i class="hgi hgi-stroke hgi-home-01"></i></button>
-                        </div>
-                        <iframe id="sj-frame"></iframe>
-                </div>
-        </body>
+		<div class="browser-ui" id="sj-browser" style="display:none">
+			<div class="nav-bar">
+				<button id="nav-back" title="Back"><i class="hgi hgi-stroke hgi-arrow-left-01"></i></button>
+				<button id="nav-forward" title="Forward"><i class="hgi hgi-stroke hgi-arrow-right-01"></i></button>
+				<button id="nav-refresh" title="Refresh"><i class="hgi hgi-stroke hgi-reload"></i></button>
+				<div class="nav-spacer"></div>
+				<button id="nav-home" title="Home"><i class="hgi hgi-stroke hgi-home-01"></i></button>
+			</div>
+			<iframe id="sj-frame"></iframe>
+		</div>
+	</body>
 </html>
