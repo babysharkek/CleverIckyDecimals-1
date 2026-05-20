@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+		/>
+		<title>Scramjet</title>
+		<base href="/" />
+		<link rel="shortcut icon" content="favicon.ico" />
+		<link rel="stylesheet" href="index.css" />
+		<script src="/scram/scramjet.all.js"></script>
+		<!-- <script src="/baremux/index.js" defer></script> -->
+		<!-- <script src="/epoxy/index.js" defer></script> -->
+		<script src="/register-sw.js" defer></script>
+		<script src="/search.js" defer></script>
+		<script src="/index.js" defer></script>
+	</head>
+
+	<body>
+		<div class="logo-wrapper left-margin">
+			<h1>Scramjet | Redirecting</h1>
+		</div>
+		<div class="desc left-margin">
+			<p>If this is a valid url please wait for the page to reload.</p>
+		</div>
+		<footer>
+			<a title="License information" href="credits.html">Credits</a>
+			<span>Based on Scramjet from Mercury Workshop</span>
+		</footer>
+		<iframe style="display: none" id="sj-frame"></iframe>
+		<script defer>
+			document.addEventListener("DOMContentLoaded", async () => {
+				if (!window.location.pathname.startsWith("/share/")) {
+					return;
+				}
+
+				const { ScramjetController } = $scramjetLoadController();
+
+				let wispUrl =
+					(location.protocol === "https:" ? "wss" : "ws") +
+					"://" +
+					location.host +
+					"/wisp/";
+
+				const scramjet = new ScramjetController({
+					files: {
+						wasm: "/scram/scramjet.wasm.wasm",
+						all: "/scram/scramjet.all.js",
+						sync: "/scram/scramjet.sync.js",
+					},
+					wisp: wispUrl,
+				});
+
+				try {
+					if (!(await registerSW())) {
+						setTimeout(() => window.location.reload(), 1000);
+					}
+				} catch (err) {
+					error.textContent = "Failed to register service worker.";
+					errorCode.textContent = err.toString();
+					throw err;
+				}
+
+				scramjet.init();
+
+				let frame = document.getElementById("sj-frame");
+				frame.style.display = "block";
+				frame.addEventListener("load", (event) => {
+					window.history.pushState(
+						{},
+						"Scramjet",
+						"/share" +
+							event.target.contentWindow.location.href.split(
+								event.target.contentWindow.location.host
+							)[1]
+					);
+				});
+
+				let path = window.location.href.split(window.location.host)[1];
+				window.history.pushState({}, "Scramjet", "/");
+				frame.src = path.split("/share/")[1];
+				window.history.pushState({}, "Scramjet", path);
+			});
+		</script>
+	</body>
+</html>
