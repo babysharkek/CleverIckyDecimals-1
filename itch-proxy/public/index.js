@@ -344,11 +344,12 @@ const gameFrame = document.getElementById("game-frame");
 const gamePlayerTitle = document.getElementById("game-player-title");
 const gameBackBtn = document.getElementById("game-back-btn");
 
-function openGame(url, name) {
+async function openGame(url, name) {
         gameList.style.display = "none";
         gamePlayer.style.display = "flex";
-        gameFrame.src = url;
         gamePlayerTitle.textContent = name;
+        await ensureSW();
+        gameFrame.src = scramjet.encodeUrl(url);
 }
 
 function closeGame() {
