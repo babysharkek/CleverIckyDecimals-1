@@ -313,11 +313,46 @@ img.ql-icon {
         color: rgba(255,255,255,0.55);
 }
 
+.game-frame-wrap {
+        flex: 1;
+        position: relative;
+        display: flex;
+}
+
 #game-frame {
         flex: 1;
         border: none;
         width: 100%;
         background: #000;
+}
+
+#game-fullscreen-overlay {
+        position: absolute;
+        bottom: 14px;
+        right: 14px;
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.18);
+        background: rgba(0,0,0,0.55);
+        backdrop-filter: blur(6px);
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.2s;
+        z-index: 10;
+        padding: 0;
+}
+
+.game-frame-wrap:hover #game-fullscreen-overlay {
+        opacity: 1;
+}
+
+#game-fullscreen-overlay:hover {
+        background: rgba(0,0,0,0.8);
 }
 
 .games-header {
@@ -368,7 +403,8 @@ img.ql-icon {
         align-items: center;
         justify-content: center;
         font-size: 3rem;
-        height: 100px;
+        aspect-ratio: 1 / 1;
+        width: 100%;
         background: rgba(0,0,0,0.25);
         position: relative;
         overflow: hidden;

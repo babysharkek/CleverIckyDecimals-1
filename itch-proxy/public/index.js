@@ -361,13 +361,15 @@ function closeGame() {
 
 gameBackBtn.addEventListener("click", closeGame);
 
-const gameFullscreenBtn = document.getElementById("game-fullscreen-btn");
-gameFullscreenBtn.addEventListener("click", () => {
+function doFullscreen() {
         const el = gameFrame;
         if (el.requestFullscreen) el.requestFullscreen();
         else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
         else if (el.mozRequestFullScreen) el.mozRequestFullScreen();
-});
+}
+
+document.getElementById("game-fullscreen-btn").addEventListener("click", doFullscreen);
+document.getElementById("game-fullscreen-overlay").addEventListener("click", doFullscreen);
 
 document.querySelectorAll(".game-card").forEach((card) => {
         card.addEventListener("click", (e) => {

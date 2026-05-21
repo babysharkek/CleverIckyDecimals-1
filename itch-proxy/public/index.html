@@ -9,7 +9,6 @@
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Roboto:wght@300;400&display=swap" />
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hugeicons@1.0.0/fonts/hugeicons.css" />
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic@1.17.9/dist/theme.min.css" />
                 <link rel="stylesheet" href="index.css" />
                 <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js@1.17.9/dist/umd/index.production.js"></script>
@@ -98,16 +97,21 @@
                         <div class="games-player" id="sj-game-player" style="display:none">
                                 <div class="game-player-bar">
                                         <button id="game-back-btn">
-                                                <i class="hgi hgi-stroke hgi-arrow-left-01"></i>
+                                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
                                                 Back
                                         </button>
                                         <span id="game-player-title"></span>
                                         <div class="player-bar-spacer"></div>
                                         <button id="game-fullscreen-btn" title="Fullscreen">
-                                                <i class="hgi hgi-stroke hgi-full-screen"></i>
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
                                         </button>
                                 </div>
-                                <iframe id="game-frame" allowfullscreen></iframe>
+                                <div class="game-frame-wrap">
+                                        <iframe id="game-frame" allowfullscreen></iframe>
+                                        <button id="game-fullscreen-overlay" title="Fullscreen">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+                                        </button>
+                                </div>
                         </div>
                         <div id="sj-game-list">
                         <div class="games-header">
@@ -127,7 +131,7 @@
                                         <div class="game-info"><span class="game-name">Combimon</span><span class="game-tag">RPG</span></div>
                                 </a>
                                 <a class="game-card" data-url="https://games.arcadrome.com/talking-tom-gold-run/1/index.html" style="--accent:#ffc400">
-                                        <div class="game-thumb">🐱</div>
+                                        <div class="game-thumb"><img src="thumb-talkingtom.jpg" alt="Talking Tom Gold Run"></div>
                                         <div class="game-info"><span class="game-name">Talking Tom Gold Run</span><span class="game-tag">Runner</span></div>
                                 </a>
                                 <a class="game-card" data-url="https://games.arcadrome.com/subway-surfers/12/index.html" style="--accent:#00b0ff">
@@ -135,7 +139,7 @@
                                         <div class="game-info"><span class="game-name">Subway Surfers</span><span class="game-tag">Runner</span></div>
                                 </a>
                                 <a class="game-card" data-url="https://games.arcadrome.com/pro-skate-free-ride/1/index.html" style="--accent:#ff6d00">
-                                        <div class="game-thumb">🛼</div>
+                                        <div class="game-thumb"><img src="thumb-skate.jpg" alt="Pro Skate Free Ride"></div>
                                         <div class="game-info"><span class="game-name">Pro Skate Free Ride</span><span class="game-tag">Sports</span></div>
                                 </a>
                                 <a class="game-card" data-url="https://games.arcadrome.com/stunt-bike-extreme/1/index.html" style="--accent:#ff1744">
@@ -151,7 +155,7 @@
                                         <div class="game-info"><span class="game-name">Dadish 2</span><span class="game-tag">Platformer</span></div>
                                 </a>
                                 <a class="game-card" data-url="https://games.arcadrome.com/rally-drift-racing/1/index.html" style="--accent:#ff9100">
-                                        <div class="game-thumb">🏁</div>
+                                        <div class="game-thumb"><img src="thumb-rally.jpg" alt="Rally Drift Racing"></div>
                                         <div class="game-info"><span class="game-name">Rally Drift Racing</span><span class="game-tag">Racing</span></div>
                                 </a>
                         </div>
@@ -160,11 +164,11 @@
 
                 <div class="browser-ui" id="sj-browser" style="display:none">
                         <div class="nav-bar">
-                                <button id="nav-back" title="Back"><i class="hgi hgi-stroke hgi-arrow-left-01"></i></button>
-                                <button id="nav-forward" title="Forward"><i class="hgi hgi-stroke hgi-arrow-right-01"></i></button>
-                                <button id="nav-refresh" title="Refresh"><i class="hgi hgi-stroke hgi-reload"></i></button>
+                                <button id="nav-back" title="Back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+                                <button id="nav-forward" title="Forward"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+                                <button id="nav-refresh" title="Refresh"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"/><path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"/></svg></button>
                                 <div class="nav-spacer"></div>
-                                <button id="nav-home" title="Home"><i class="hgi hgi-stroke hgi-home-01"></i></button>
+                                <button id="nav-home" title="Home"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg></button>
                         </div>
                         <iframe id="sj-frame"></iframe>
                 </div>
