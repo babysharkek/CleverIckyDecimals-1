@@ -338,11 +338,34 @@ navHome.addEventListener("click", () => showHome());
 tabHome.addEventListener("click", () => showHome());
 tabGames.addEventListener("click", () => showGames());
 
+const gamePlayer = document.getElementById("sj-game-player");
+const gameList = document.getElementById("sj-game-list");
+const gameFrame = document.getElementById("game-frame");
+const gamePlayerTitle = document.getElementById("game-player-title");
+const gameBackBtn = document.getElementById("game-back-btn");
+
+function openGame(url, name) {
+        gameList.style.display = "none";
+        gamePlayer.style.display = "flex";
+        gameFrame.src = url;
+        gamePlayerTitle.textContent = name;
+}
+
+function closeGame() {
+        gamePlayer.style.display = "none";
+        gameList.style.display = "flex";
+        gameFrame.src = "about:blank";
+        gamePlayerTitle.textContent = "";
+}
+
+gameBackBtn.addEventListener("click", closeGame);
+
 document.querySelectorAll(".game-card").forEach((card) => {
-        card.addEventListener("click", async (e) => {
+        card.addEventListener("click", (e) => {
                 e.preventDefault();
                 const url = card.getAttribute("data-url");
-                if (url) await navigate(url);
+                const name = card.querySelector(".game-name")?.textContent || "";
+                if (url) openGame(url, name);
         });
 });
 

@@ -95,9 +95,19 @@
                 </div>
 
                 <div class="games-screen" id="sj-games" style="display:none">
+                        <div class="games-player" id="sj-game-player" style="display:none">
+                                <div class="game-player-bar">
+                                        <button id="game-back-btn">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M15 18l-6-6 6-6"/></svg>
+                                                Back to Games
+                                        </button>
+                                        <span id="game-player-title"></span>
+                                </div>
+                                <iframe id="game-frame" allowfullscreen></iframe>
+                        </div>
+                        <div id="sj-game-list">
                         <div class="games-header">
                                 <h2>Games</h2>
-                                <p>Click any game to play it through the proxy</p>
                         </div>
                         <div class="games-grid" id="sj-games-grid">
                                 <a class="game-card" data-url="https://super-liquid-soccer.com/wp-content/uploads/games/html5/S/SuperLiquidSoccer/index.html" style="--g1:#003a1a;--g2:#005a2a;--accent:#00e676">
@@ -136,6 +146,7 @@
                                         <div class="game-thumb">🏁</div>
                                         <div class="game-info"><span class="game-name">Rally Drift Racing</span><span class="game-tag">Racing</span></div>
                                 </a>
+                        </div>
                         </div>
                 </div>
 
