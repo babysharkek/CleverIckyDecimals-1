@@ -282,18 +282,30 @@ img.ql-icon {
         display: flex;
         align-items: center;
         gap: 6px;
-        background: rgba(255,255,255,0.08);
-        border: 1px solid rgba(255,255,255,0.12);
+        background: rgba(255,255,255,0.07);
+        border: 1px solid rgba(255,255,255,0.1);
         border-radius: 8px;
-        color: #fff;
+        color: rgba(255,255,255,0.8);
         font-size: 13px;
         font-family: "Inter", sans-serif;
         padding: 5px 12px;
         cursor: pointer;
-        transition: background 0.15s;
+        transition: background 0.15s, color 0.15s;
+        white-space: nowrap;
 }
 
-.game-player-bar button:hover { background: rgba(255,255,255,0.15); }
+.game-player-bar button i { font-size: 15px; }
+
+.game-player-bar button:hover {
+        background: rgba(255,255,255,0.13);
+        color: #fff;
+}
+
+#game-fullscreen-btn {
+        padding: 5px 10px;
+}
+
+.player-bar-spacer { flex: 1; }
 
 #game-player-title {
         font-family: "Inter", sans-serif;
@@ -340,7 +352,7 @@ img.ql-icon {
         cursor: pointer;
         text-decoration: none;
         border: 1px solid rgba(255,255,255,0.08);
-        background: linear-gradient(135deg, var(--g1), var(--g2));
+        background: #1a1a1a;
         transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
         position: relative;
 }
@@ -359,6 +371,14 @@ img.ql-icon {
         height: 100px;
         background: rgba(0,0,0,0.25);
         position: relative;
+        overflow: hidden;
+}
+
+.game-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
 }
 
 .game-thumb::after {

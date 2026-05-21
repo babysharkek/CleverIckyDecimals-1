@@ -98,10 +98,14 @@
                         <div class="games-player" id="sj-game-player" style="display:none">
                                 <div class="game-player-bar">
                                         <button id="game-back-btn">
-                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M15 18l-6-6 6-6"/></svg>
-                                                Back to Games
+                                                <i class="hgi hgi-stroke hgi-arrow-left-01"></i>
+                                                Back
                                         </button>
                                         <span id="game-player-title"></span>
+                                        <div class="player-bar-spacer"></div>
+                                        <button id="game-fullscreen-btn" title="Fullscreen">
+                                                <i class="hgi hgi-stroke hgi-full-screen"></i>
+                                        </button>
                                 </div>
                                 <iframe id="game-frame" allowfullscreen></iframe>
                         </div>
@@ -110,43 +114,43 @@
                                 <h2>Games</h2>
                         </div>
                         <div class="games-grid" id="sj-games-grid">
-                                <a class="game-card" data-url="https://super-liquid-soccer.com/wp-content/uploads/games/html5/S/SuperLiquidSoccer/index.html" style="--g1:#003a1a;--g2:#005a2a;--accent:#00e676">
-                                        <div class="game-thumb">⚽</div>
+                                <a class="game-card" data-url="https://super-liquid-soccer.com/wp-content/uploads/games/html5/S/SuperLiquidSoccer/index.html" style="--accent:#00e676">
+                                        <div class="game-thumb"><img src="thumb-soccer.jpg" alt="Super Liquid Soccer"></div>
                                         <div class="game-info"><span class="game-name">Super Liquid Soccer</span><span class="game-tag">Sports</span></div>
                                 </a>
-                                <a class="game-card" data-url="https://games.arcadrome.com/retro-bowl/1/index.html" style="--g1:#1a2a00;--g2:#2d4a00;--accent:#76b900">
-                                        <div class="game-thumb">🏈</div>
+                                <a class="game-card" data-url="https://games.arcadrome.com/retro-bowl/1/index.html" style="--accent:#76b900">
+                                        <div class="game-thumb"><img src="thumb-retrobowl.jpg" alt="Retro Bowl"></div>
                                         <div class="game-info"><span class="game-name">Retro Bowl</span><span class="game-tag">Sports</span></div>
                                 </a>
-                                <a class="game-card" data-url="https://games.arcadrome.com/combimon/1/index.html" style="--g1:#1a0030;--g2:#2d0055;--accent:#d500f9">
-                                        <div class="game-thumb">⚡</div>
+                                <a class="game-card" data-url="https://games.arcadrome.com/combimon/1/index.html" style="--accent:#d500f9">
+                                        <div class="game-thumb"><img src="thumb-combimon.jpg" alt="Combimon"></div>
                                         <div class="game-info"><span class="game-name">Combimon</span><span class="game-tag">RPG</span></div>
                                 </a>
-                                <a class="game-card" data-url="https://games.arcadrome.com/talking-tom-gold-run/1/index.html" style="--g1:#2a1a00;--g2:#4a3000;--accent:#ffc400">
+                                <a class="game-card" data-url="https://games.arcadrome.com/talking-tom-gold-run/1/index.html" style="--accent:#ffc400">
                                         <div class="game-thumb">🐱</div>
                                         <div class="game-info"><span class="game-name">Talking Tom Gold Run</span><span class="game-tag">Runner</span></div>
                                 </a>
-                                <a class="game-card" data-url="https://games.arcadrome.com/subway-surfers/12/index.html" style="--g1:#001a2a;--g2:#002d4a;--accent:#00b0ff">
-                                        <div class="game-thumb">🛹</div>
+                                <a class="game-card" data-url="https://games.arcadrome.com/subway-surfers/12/index.html" style="--accent:#00b0ff">
+                                        <div class="game-thumb"><img src="thumb-subway.jpg" alt="Subway Surfers"></div>
                                         <div class="game-info"><span class="game-name">Subway Surfers</span><span class="game-tag">Runner</span></div>
                                 </a>
-                                <a class="game-card" data-url="https://games.arcadrome.com/pro-skate-free-ride/1/index.html" style="--g1:#1a0a00;--g2:#3a1a00;--accent:#ff6d00">
+                                <a class="game-card" data-url="https://games.arcadrome.com/pro-skate-free-ride/1/index.html" style="--accent:#ff6d00">
                                         <div class="game-thumb">🛼</div>
                                         <div class="game-info"><span class="game-name">Pro Skate Free Ride</span><span class="game-tag">Sports</span></div>
                                 </a>
-                                <a class="game-card" data-url="https://games.arcadrome.com/stunt-bike-extreme/1/index.html" style="--g1:#1a0000;--g2:#3a0000;--accent:#ff1744">
-                                        <div class="game-thumb">🏍️</div>
+                                <a class="game-card" data-url="https://games.arcadrome.com/stunt-bike-extreme/1/index.html" style="--accent:#ff1744">
+                                        <div class="game-thumb"><img src="thumb-stuntbike.jpg" alt="Stunt Bike Extreme"></div>
                                         <div class="game-info"><span class="game-name">Stunt Bike Extreme</span><span class="game-tag">Racing</span></div>
                                 </a>
-                                <a class="game-card" data-url="https://games.playtropolis.com/dadish/" style="--g1:#001a0a;--g2:#003020;--accent:#00e5b0">
-                                        <div class="game-thumb">🥬</div>
+                                <a class="game-card" data-url="https://games.playtropolis.com/dadish/" style="--accent:#00e5b0">
+                                        <div class="game-thumb"><img src="thumb-dadish.jpg" alt="Dadish"></div>
                                         <div class="game-info"><span class="game-name">Dadish</span><span class="game-tag">Platformer</span></div>
                                 </a>
-                                <a class="game-card" data-url="https://games.arcadrome.com/dadish-2/1/index.html" style="--g1:#001a1a;--g2:#003030;--accent:#1de9b6">
-                                        <div class="game-thumb">🥗</div>
+                                <a class="game-card" data-url="https://games.arcadrome.com/dadish-2/1/index.html" style="--accent:#1de9b6">
+                                        <div class="game-thumb"><img src="thumb-dadish2.jpg" alt="Dadish 2"></div>
                                         <div class="game-info"><span class="game-name">Dadish 2</span><span class="game-tag">Platformer</span></div>
                                 </a>
-                                <a class="game-card" data-url="https://games.arcadrome.com/rally-drift-racing/1/index.html" style="--g1:#1a0a00;--g2:#3a1500;--accent:#ff9100">
+                                <a class="game-card" data-url="https://games.arcadrome.com/rally-drift-racing/1/index.html" style="--accent:#ff9100">
                                         <div class="game-thumb">🏁</div>
                                         <div class="game-info"><span class="game-name">Rally Drift Racing</span><span class="game-tag">Racing</span></div>
                                 </a>

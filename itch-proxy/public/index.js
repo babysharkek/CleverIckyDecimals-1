@@ -361,6 +361,14 @@ function closeGame() {
 
 gameBackBtn.addEventListener("click", closeGame);
 
+const gameFullscreenBtn = document.getElementById("game-fullscreen-btn");
+gameFullscreenBtn.addEventListener("click", () => {
+        const el = gameFrame;
+        if (el.requestFullscreen) el.requestFullscreen();
+        else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+        else if (el.mozRequestFullScreen) el.mozRequestFullScreen();
+});
+
 document.querySelectorAll(".game-card").forEach((card) => {
         card.addEventListener("click", (e) => {
                 e.preventDefault();
